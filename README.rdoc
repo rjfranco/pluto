@@ -1,0 +1,11 @@
+== Pluto
+Pluto is a web-app I'm working on to simplify the task of reporting my time, and to specify wether that time worked has been remote or onsite. Ideally, when this is complete it will also include some kind of local task that will sync this information to a third-party system.
+
+=== Requirements
+* Ruby 2.1.5
+* Node
+
+=== Setup
+You should be able to run the app as normal vail rails s, but there are local configuration files optimized for this project to work in (RVM)[http://rvm.io/] and (Pow)[http://pow.cx/] on an OSX machine.
+
+If you don't already have ruby installed, I highly recommend installing homebrew if you're on OSX, then using rvm to actually install and manage your ruby(ies)
