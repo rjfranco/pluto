@@ -1,0 +1,17 @@
+{{#if userLoggedIn}}
+  <header class="small-header">
+    <h1>Pluto</h1>
+    <div class="header-actions">
+      <button>Sign Out</button>
+    </div>
+  </header>
+{{else}}
+  <header class="large-header">
+    <h1>Pluto</h1>
+    <h2>Keeper of Time</h1>
+  </header>
+  <content class="login-content">
+    <p>This app is designed to track hours worked in a day, and wether they are remote or onsite, and that's it. No extra bells or whistles.</p>
+    <button>Sign Up</button> or <button>Sign in</button>
+  </content>
+{{/if}}

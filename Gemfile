@@ -26,6 +26,15 @@ gem 'haml-rails'
 gem 'ember-rails'
 gem 'ember-source', '~> 1.8.1'
 
+group :development do
+  # Live reloading
+  gem 'guard-pow', require: false
+  gem 'guard-livereload', require: false
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -37,9 +46,6 @@ gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 
 # Puma is speedy.
 gem 'puma-rails'
