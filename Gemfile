@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -22,11 +22,15 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use haml.
 gem 'haml-rails'
 
+# Ember.
+gem 'ember-rails'
+gem 'ember-source', '~> 1.8.1'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+# Replacing rails jquery with the magic one from bower
+gem 'rails-assets-jquery'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
