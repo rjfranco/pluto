@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root 'application#index'
 
+  get 'app-uris' => 'application#app_uris'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

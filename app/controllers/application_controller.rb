@@ -5,4 +5,13 @@ class ApplicationController < ActionController::Base
 
   def index
   end
+
+  def app_uris
+    # Define urls ember app might need
+    app_urls = {
+      new_registration: new_user_registration_path
+    }
+
+    render json: app_urls
+  end
 end
