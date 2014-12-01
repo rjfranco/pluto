@@ -2,4 +2,5 @@
 
 Pluto.Router.map ()->
   # @resource('posts')
-
+  @route 'sign-up'
+  @route 'sign-in'

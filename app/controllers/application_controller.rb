@@ -8,10 +8,11 @@ class ApplicationController < ActionController::Base
 
   def app_uris
     # Define urls ember app might need
-    app_urls = {
-      new_registration: new_user_registration_path
+    app_uris = {
+      new_registration: new_user_registration_path,
+      new_session: new_user_session_path
     }
 
-    render json: app_urls
+    render json: app_uris
   end
 end
