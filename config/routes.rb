@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   # Override default session controller
   devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions' }
 
+
+  # Match everything else to the webapp
+  get '*other' => 'application#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
