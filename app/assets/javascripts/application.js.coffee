@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery-validate
 #= require handlebars
 #= require ember
 #= require ember-data
