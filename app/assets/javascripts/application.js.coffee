@@ -1,5 +1,6 @@
 #= require jquery
 #= require jquery-validate
+#= require ./libraries/jquery-validate-regex
 #= require handlebars
 #= require ember
 #= require ember-data
