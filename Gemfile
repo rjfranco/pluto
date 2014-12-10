@@ -31,6 +31,10 @@ group :development do
   gem 'guard-pow', require: false
   gem 'guard-livereload', require: false
 
+  # Allows inspection on objects within a rails console on request
+  gem 'pry-rails'
+  gem 'pry-remote'
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
@@ -41,6 +45,7 @@ end
 # Replacing rails jquery with the magic one from bower
 gem 'rails-assets-jquery'
 
+# Additional JS Assets
 gem 'rails-assets-jquery-validate'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

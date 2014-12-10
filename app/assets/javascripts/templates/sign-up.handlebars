@@ -1,18 +1,26 @@
-<form id="signup-form">
+<form id="signup-form" {{action 'signUp' on='submit'}}>
   <ul>
     <li>
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" />
-    </li>
-    <li>
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email" />
+      <input type="text" name="user[name]" id="name" />
     </li>
     <li>
       <label for="profile-url">Profile URL</label>
       <span class="hint">Only allows letters, numbers, and hyphens.</span>
-      <input type="text" name="profile-url" id="profile-url" />
+      <input type="text" name="user[profile_url]" id="profile-url" />
+    </li>
+    <li>
+      <label for="email">Email</label>
+      <input type="text" name="user[email]" id="email" />
+    </li>
+    <li>
+      <label for="password">Password</label>
+      <input type="text" name="user[password]" id="password" />
+    </li>
+    <li>
+      <label for="confirm_password">Confirm your Password</label>
+      <input type="text" name="user[password_confirmation]" id="confirm_password" />
     </li>
   </ul>
-  <button {{action 'signUp'}}>Sign Up!</button>
+  <button type="submit">Sign Up!</button>
 </form>

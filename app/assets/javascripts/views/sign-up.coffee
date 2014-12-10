@@ -3,13 +3,13 @@ Pluto.SignUpView = Em.View.extend
     @set 'controller.form', $('#signup-form')
     @get('controller.form').validate
       rules:
-        name: 'required'
-        email:
+        'user[name]': 'required'
+        'user[email]':
           required: true
           email: true
-        'profile-url':
+        'user[profile-url]':
           required: true
           regex: '^[a-zA-Z\d\-]+$'
       messages:
-        'profile-url':
+        'user[profile-url]':
           regex: 'You can only use letters, numbers, and hyphens.'
