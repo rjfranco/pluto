@@ -1,7 +1,8 @@
 Pluto.SignUpController = Em.Controller.extend
   actions:
     signUp: ->
-      @signupRequest().then (data) =>
+      @clearCurrentErrors()
+      @signupRequest().then $.proxy(@, 'processNewUser')
 
   signupRequest: ->
     form_fields = @get('form').serializeArray()
@@ -10,8 +11,31 @@ Pluto.SignUpController = Em.Controller.extend
     for field in form_fields
       request[field.name] = field.value
 
-    console.log 'Request to send', request
     $.ajax
       url: '/users'
       type: 'post'
       data: request
+
+  processNewUser: (data) ->
+    if data.success
+      if data.inactive_message
+        debugger
+      else
+        debugger
+        Pluto.User.create data.user
+    else
+      @displayServerErrors data.errors
+
+  clearCurrentErrors: ->
+    $('#signup-form p.error').remove()
+
+  displayServerErrors: (errors) ->
+    for key in Object.keys(errors)
+      $field = $("##{key}")
+      message = """
+        <p class="error">#{key.capitalize().replace(/\_/, ' ')} #{errors[key]}</p>
+      """
+      if $field.length
+        $field.after message
+      else
+        $('#signup-form').prepend message
