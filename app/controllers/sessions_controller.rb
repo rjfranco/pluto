@@ -11,6 +11,11 @@ class SessionsController < Devise::SessionsController
     return render :json => {:success => true}
   end
 
+  def after_sign_in_path_for(resource_or_scope)
+    # stored_location_for(resource_or_scope) || signed_in_root_path(resource_or_scope)
+    return render :json => {:success => true, user: resource_or_scope}
+  end
+
   def failure
     return render :json => {:success => false, :errors => ["Login failed."]}
   end
