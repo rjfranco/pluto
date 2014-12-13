@@ -1,4 +1,6 @@
 Pluto.SignUpController = Em.Controller.extend
+  needs: ['user']
+
   actions:
     signUp: ->
       @clearCurrentErrors()
@@ -19,10 +21,10 @@ Pluto.SignUpController = Em.Controller.extend
   processNewUser: (data) ->
     if data.success
       if data.inactive_message
-        debugger
+        @displayServerErrors data.inactive_message
       else
-        debugger
-        Pluto.User.create data.user
+        @set 'controllers.user.content', Pluto.User.create data.user
+        @fadeToIndex()
     else
       @displayServerErrors data.errors
 
@@ -39,3 +41,9 @@ Pluto.SignUpController = Em.Controller.extend
         $field.after message
       else
         $('#signup-form').prepend message
+
+  fadeToIndex: ->
+    $('#signup-form').addClass('finished')
+    setTimeout =>
+      @transitionToRoute 'index'
+    , 400
