@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # Override default session controller
   devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions' }
 
+  devise_scope :user do
+    get 'users/current' => 'registrations#current'
+  end
 
   # Match everything else to the webapp
   get '*other' => 'application#index'

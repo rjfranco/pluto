@@ -24,6 +24,11 @@ class RegistrationsController < Devise::RegistrationsController
     sign_in(resource_name, resource)
   end
 
+  def current
+    user = current_user || nil
+    return render json: {user: user}
+  end
+
   private
   def configure_allowed_parameters
     devise_parameter_sanitizer.for(:sign_up) do |user|
