@@ -1,0 +1,13 @@
+<form id="signin-form" {{action 'signIn' on='submit'}}>
+  <ul>
+    <li>
+      <label for="email">Email</label>
+      <input type="text" name="user[email]" id="email" />
+    </li>
+    <li>
+      <label for="password">Password</label>
+      <input type="password" name="user[password]" id="password" />
+    </li>
+  </ul>
+  <button type="submit">Sign Up!</button>
+</form>
