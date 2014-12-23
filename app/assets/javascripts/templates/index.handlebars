@@ -5,6 +5,20 @@
       <button {{action 'signOut'}}>Sign Out</button>
     </div>
   </header>
+  <form class="entry-form">
+    <ul>
+      <li>
+        <input type="text" name="time" />
+      </li>
+      <li>
+        <label for="onsite">On-site</label>
+        <input type="radio" name="location" id="onsite" value="onsite" checked="checked" />
+        <label for="remote">Remote</label>
+        <input type="radio" name="location" id="remote" value="remote" />
+      </li>
+    </ul>
+    <button type="submit">Log it.</button>
+  </form>
 {{else}}
   <header class="large-header">
     <h1>Pluto</h1>
