@@ -24,7 +24,8 @@ gem 'haml-rails'
 
 # Ember.
 gem 'ember-rails'
-gem 'ember-source', '~> 1.8.1'
+gem 'ember-source', '~> 1.9.0'
+gem 'handlebars-source', '~> 2.0.0'
 
 group :development do
   # Live reloading
