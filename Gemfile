@@ -24,7 +24,7 @@ gem 'haml-rails'
 
 # Ember.
 gem 'ember-rails'
-gem 'ember-source', '~> 1.9.0'
+gem 'ember-source', '~> 1.9.1'
 gem 'handlebars-source', '~> 2.0.0'
 
 group :development do
