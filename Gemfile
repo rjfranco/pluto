@@ -46,8 +46,9 @@ end
 # Replacing rails jquery with the magic one from bower
 gem 'rails-assets-jquery'
 
-# Additional JS Assets
+# Additional Static Assets
 gem 'rails-assets-jquery-validate'
+gem 'rails-assets-normalize-css'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
