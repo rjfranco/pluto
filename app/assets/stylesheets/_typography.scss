@@ -1,0 +1,20 @@
+h1 {
+  font-weight: 300;
+  font-size: 2rem;
+  font-family: 'Didot 24 A', 'Didot 24 B';
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 1.7rem;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  &:hover {
+    color: #999;
+  }
+}

@@ -2,7 +2,10 @@
   <header class="small-header">
     <h1>Pluto</h1>
     <div class="header-actions">
-      <button {{action 'signOut'}}>Sign Out</button>
+      <button {{action 'signOut'}} class="signout">
+        {{svg 'account-logout'}}
+        <span>Sign Out</span>
+      </button>
     </div>
   </header>
   <form class="entry-form">
@@ -20,12 +23,16 @@
     <button type="submit">Log it.</button>
   </form>
 {{else}}
-  <header class="large-header">
-    <h1>Pluto</h1>
-    <h2>Keeper of Time</h1>
-  </header>
-  <content class="login-content">
-    <p>This app is designed to track hours worked in a day, and wether they are remote or onsite, and that's it. No extra bells or whistles.</p>
-    {{#link-to 'sign-up'}}Sign Up{{/link-to}} or {{#link-to 'sign-in'}}Sign in{{/link-to}}
-  </content>
+  <section class="splash">
+    <header>
+      <h1>Plu<span class="t-kern">t</span>o</h1>
+      <h2>Keeper of Time</h2>
+    </header>
+    <content>
+      <p>This app is designed to track hours worked in a day, and wether they are remote or onsite, and that's it. No extra bells or whistles.</p>
+      <div class="actions">
+        {{#link-to 'sign-up'}}{{svg 'clipboard'}} Sign Up{{/link-to}} or {{#link-to 'sign-in'}}{{svg 'account-login'}} Sign in{{/link-to}}
+      </div>
+    </content>
+  </section>
 {{/if}}
