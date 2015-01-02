@@ -1,6 +1,7 @@
 @import 'normalize-css';
 @import 'body';
 @import 'typography';
+@import 'forms';
 @import 'buttons';
 
 .application {
@@ -93,58 +94,15 @@
 }
 
 #signin-form {
-  display: block;
-  text-align: center;
-  width: 29.05rem;
-  margin: 2rem auto;
+  @extend %account-form;
+}
 
-  ul {
-    display: block;
-    margin: 0;
-    padding: 0;
-    li {
-      display: block;
-      text-align: left;
-      letter-spacing: -.3rem;
-      margin: 0;
-      & * {
-        letter-spacing: normal;
-      }
-    }
-  }
-
-  label {
-    display: inline-block;
-    background: #ddd;
-    color: #000;
-    padding: .5rem;
-    width: 7rem;
-    &.error {
-      background-color: red;
-      color: #fff;
-      display: block;
-      width: auto;
-    }
-  }
-
-  input {
-    display: inline-block;
-    padding: .5rem;
-    border: 0;
-    width: 20rem;
-    color: #000;
-
-    &:focus {
-      outline: 0;
-    }
-
-    &:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0px 50px white inset;
-    }
-  }
-
-  button {
-    margin: 2rem 0;
-    padding: .5rem 1rem;
+#signup-form {
+  @extend %account-form;
+  label[for=password_confirmation] {
+    font-size: .7rem;
+    padding: .65rem .5rem;
+    position: relative;
+    top: -.1rem;
   }
 }

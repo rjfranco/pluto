@@ -1,3 +1,7 @@
+<header class="small-header">
+  <h1>{{#link-to 'index'}}Pluto{{/link-to}}</h1>
+</header>
+
 <form id="signup-form" {{action 'signUp' on='submit'}}>
   <ul>
     <li>
@@ -6,8 +10,8 @@
     </li>
     <li>
       <label for="profile_url">Profile URL</label>
-      <span class="hint">Only allows letters, numbers, and hyphens.</span>
       <input type="text" name="user[profile_url]" id="profile_url" />
+      <span class="hint">Only allows letters, numbers, and hyphens.</span>
     </li>
     <li>
       <label for="email">Email</label>
@@ -18,7 +22,7 @@
       <input type="password" name="user[password]" id="password" />
     </li>
     <li>
-      <label for="password_confirmation">Confirm your Password</label>
+      <label for="password_confirmation">Confirm Password</label>
       <input type="password" name="user[password_confirmation]" id="password_confirmation" />
     </li>
   </ul>
