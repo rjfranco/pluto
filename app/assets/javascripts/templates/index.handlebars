@@ -1,6 +1,6 @@
 {{#if userLoggedIn}}
   <header class="small-header">
-    <h1>Pluto</h1>
+    {{#link-to 'index'}}<h1>Pluto</h1>{{/link-to}}
     <div class="header-actions">
       <button {{action 'signOut'}} class="signout">
         {{svg 'account-logout'}}

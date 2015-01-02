@@ -1,6 +1,7 @@
 @import 'normalize-css';
 @import 'body';
 @import 'typography';
+@import 'buttons';
 
 .application {
   -webkit-transform-style: preserve-3d;
@@ -43,23 +44,12 @@
     .actions {
       text-align: center;
       a {
-        background: rgba(255,255,255,.8);
-        border-radius: .1rem;
-        padding: .25rem .4rem;
-        color: #000;
-        border-bottom: .25rem solid rgba(255,255,255,.9);
-        &:hover {
-          background: rgba(255,255,255,.6);
-        }
-        svg {
-          width: 1rem;
-          position: relative;
-          top: .2rem;
-        }
+        @extend button;
       }
     }
   }
 }
+
 
 .small-header {
   margin: 0;
@@ -69,6 +59,12 @@
   h1 {
     display: inline-block;
     margin: 1rem;
+    a {
+      color: #fff;
+      &:hover {
+        color: #ddd;
+      }
+    }
   }
   .header-actions {
     position: absolute;
@@ -93,5 +89,62 @@
         display: none;
       }
     }
+  }
+}
+
+#signin-form {
+  display: block;
+  text-align: center;
+  width: 29.05rem;
+  margin: 2rem auto;
+
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    li {
+      display: block;
+      text-align: left;
+      letter-spacing: -.3rem;
+      margin: 0;
+      & * {
+        letter-spacing: normal;
+      }
+    }
+  }
+
+  label {
+    display: inline-block;
+    background: #ddd;
+    color: #000;
+    padding: .5rem;
+    width: 7rem;
+    &.error {
+      background-color: red;
+      color: #fff;
+      display: block;
+      width: auto;
+    }
+  }
+
+  input {
+    display: inline-block;
+    padding: .5rem;
+    border: 0;
+    width: 20rem;
+    color: #000;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 50px white inset;
+    }
+  }
+
+  button {
+    margin: 2rem 0;
+    padding: .5rem 1rem;
   }
 }
