@@ -11,10 +11,10 @@ Pluto.IndexController = Em.Controller.extend
 
   dayBefore: moment().subtract(2, 'days').format('MMM Do')
 
-  dayBeforeValue: moment().subtract(2, 'days').toString()
+  dayBeforeValue: moment().subtract(2, 'days').format('L')
 
   yesterday: moment().subtract(1, 'days').format('MMM Do')
 
-  yesterdayValue: moment().subtract(1, 'days').toString()
+  yesterdayValue: moment().subtract(1, 'days').format('L')
 
-  todayValue: moment().toString()
+  todayValue: moment().format('L')
