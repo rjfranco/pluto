@@ -10,14 +10,24 @@
   </header>
   <form class="entry-form">
     <ul>
+      <li class="date-toggle">
+        <input type="radio" name="date" id="day-before" {{bind-attr value="dayBeforeValue"}} />
+        <label for="day-before">{{dayBefore}}</label>
+        <input type="radio" name="date" id="yesterday" {{bind-attr value="yesterdayValue"}}/>
+        <label for="yesterday">{{yesterday}}</label>
+        <input type="radio" name="date" id="today" checked="checked" {{bind-attr value="todayValue"}} />
+        <label for="today">{{today}}</label>
+        <input type="radio" name="date" id="selected-date" />
+        <label for="selected-date">{{svg 'calendar'}} Calendar</label>
+      </li>
       <li>
         <input type="text" name="time" />
       </li>
-      <li>
-        <label for="onsite">On-site</label>
+      <li class="location-toggle">
         <input type="radio" name="location" id="onsite" value="onsite" checked="checked" />
-        <label for="remote">Remote</label>
+        <label for="onsite">On-site</label>
         <input type="radio" name="location" id="remote" value="remote" />
+        <label for="remote">Remote</label>
       </li>
     </ul>
     <button type="submit">Log it.</button>

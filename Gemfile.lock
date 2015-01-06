@@ -149,7 +149,10 @@ GEM
     rails-assets-jquery (2.1.1)
     rails-assets-jquery-validate (1.13.1)
       rails-assets-jquery (>= 1.6.4)
+    rails-assets-moment (2.8.4)
     rails-assets-normalize-css (3.0.2)
+    rails-assets-pickadate (4.0.0.0)
+      rails-assets-jquery (>= 1.7)
     railties (4.1.8)
       actionpack (= 4.1.8)
       activesupport (= 4.1.8)
@@ -216,7 +219,9 @@ DEPENDENCIES
   rails (= 4.1.8)
   rails-assets-jquery
   rails-assets-jquery-validate
+  rails-assets-moment
   rails-assets-normalize-css
+  rails-assets-pickadate
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

@@ -49,6 +49,8 @@ gem 'rails-assets-jquery'
 # Additional Static Assets
 gem 'rails-assets-jquery-validate'
 gem 'rails-assets-normalize-css'
+gem 'rails-assets-pickadate'
+gem 'rails-assets-moment'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'

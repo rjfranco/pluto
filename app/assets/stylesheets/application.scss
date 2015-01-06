@@ -106,3 +106,42 @@
     top: -.1rem;
   }
 }
+
+.entry-form {
+  background: rgba(255,255,255,.4);
+  max-width: 25rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  ul {
+    display: block;
+    padding: 0;
+    background: rgba(255,255,255,.4);
+    li {
+      display: block;
+    }
+  }
+  input {
+    color: #000;
+    outline: none;
+  }
+  .date-toggle {
+    input[type=radio] {
+      display: none;
+    }
+    label {
+      background: rgba(0,0,0,.4);
+    }
+  }
+  label[for=selected-date] {
+    svg {
+      width: 1rem;
+      use {
+        fill: #fff;
+      }
+    }
+  }
+  input[name=time] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
