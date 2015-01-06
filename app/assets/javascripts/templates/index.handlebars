@@ -16,11 +16,11 @@
         <input type="radio" name="date" id="yesterday" {{bind-attr value="yesterdayValue"}}/>
         <label for="yesterday">{{yesterday}}</label>
         <input type="radio" name="date" id="today" checked="checked" {{bind-attr value="todayValue"}} />
-        <label for="today">{{today}}</label>
+        <label for="today">Today</label>
         <input type="radio" name="date" id="selected-date" />
         <label for="selected-date">{{svg 'calendar'}} Calendar</label>
       </li>
-      <li>
+      <li class="time">
         <input type="text" name="time" />
       </li>
       <li class="location-toggle">

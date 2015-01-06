@@ -115,7 +115,6 @@
   ul {
     display: block;
     padding: 0;
-    background: rgba(255,255,255,.4);
     li {
       display: block;
     }
@@ -125,20 +124,47 @@
     outline: none;
   }
   .date-toggle {
+    label {
+      background: rgba(255,255,255,.2);
+      padding: .25rem .4rem;
+      display: inline-block;
+      cursor: pointer;
+      &:hover {
+        background: #fff;
+        color: #555;
+      }
+    }
     input[type=radio] {
       display: none;
-    }
-    label {
-      background: rgba(0,0,0,.4);
+      &:checked + label {
+        background: rgba(255,255,255,.4);
+        cursor: default;
+        &:hover {
+          color: #fff;
+        }
+      }
     }
   }
   label[for=selected-date] {
     svg {
       width: 1rem;
+      position: relative;
+      top: .1rem;
       use {
         fill: #fff;
       }
     }
+    &:hover {
+      svg {
+        use {
+          fill: #555;
+        }
+      }
+    }
+  }
+  .time {
+    padding: 1rem;
+    background: rgba(255,255,255,.4);
   }
   input[name=time] {
     width: 100%;
