@@ -1,7 +1,8 @@
 #= require jquery
 #= require jquery-validate
-#= require moment
 #= require ./libraries/jquery-validate-regex
+#= require moment
+#= require jquery.transit
 #= require handlebars
 #= require ember
 #= require_self

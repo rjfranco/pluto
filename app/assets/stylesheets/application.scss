@@ -201,6 +201,12 @@
     }
   }
 
+  label.error {
+    background: rgba(255,0,0,.4);
+    display: block;
+    padding: .5rem
+  }
+
   [type=submit] {
     box-sizing: border-box;
     padding: 0;
@@ -214,4 +220,14 @@
     font-size: 1.25rem;
     margin-top: 2rem;
   }
+}
+
+.log-notice {
+  opacity: 0;
+  transform: translateX(100%);
+  max-width: 25rem;
+  text-align: center;
+  background: #60ca68;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
 }

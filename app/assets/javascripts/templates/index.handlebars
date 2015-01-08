@@ -8,7 +8,7 @@
       </button>
     </div>
   </header>
-  <form class="entry-form">
+  <form class="entry-form" {{action 'submitEntry' on='submit'}}>
     <ul>
       <li class="date-toggle">
         <input type="radio" name="date" id="day-before" {{bind-attr value="dayBeforeValue"}} />
@@ -32,6 +32,8 @@
     </ul>
     <button type="submit">Log it.</button>
   </form>
+
+  <p class="log-notice">Logged 2 hours and 30 minutes remote.</p>
 {{else}}
   <section class="splash">
     <header>
