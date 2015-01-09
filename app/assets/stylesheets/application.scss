@@ -3,6 +3,8 @@
 @import 'typography';
 @import 'forms';
 @import 'buttons';
+@import 'pickadate/lib/themes/default.scss';
+@import 'pickadate/lib/themes/default.date.scss';
 
 .full-height {
   -webkit-transform-style: preserve-3d;
@@ -169,6 +171,10 @@
         }
       }
     }
+  }
+
+  .picker__input {
+    display: none;
   }
 
   .time {

@@ -18,7 +18,8 @@
         <input type="radio" name="date" id="today" checked="checked" {{bind-attr value="todayValue"}} />
         <label for="today">Today</label>
         <input type="radio" name="date" id="selected-date" />
-        <label for="selected-date">{{svg 'calendar'}} Calendar</label>
+        <label for="selected-date" {{action 'triggerCalendar'}}>{{svg 'calendar'}} Calendar</label>
+        <input type="hidden" name="hidden-date-field" id="selected-date-input" />
       </li>
       <li class="time">
         <input type="text" name="unformatted_time" placeholder="time" />

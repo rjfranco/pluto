@@ -3,6 +3,7 @@
 #= require ./libraries/jquery-validate-regex
 #= require ./libraries/to-word
 #= require moment
+#= require pickadate
 #= require jquery.transit
 #= require handlebars
 #= require ember

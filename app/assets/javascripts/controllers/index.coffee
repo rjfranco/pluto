@@ -9,6 +9,15 @@ Pluto.IndexController = Em.Controller.extend
         @showNewLog form_data.unformatted_time
         @clearForm()
 
+    triggerCalendar: ->
+      console.log 'Triggering?'
+      console.log @get('datepicker').get('open')
+      unless @get('datepicker').get('open')
+        console.log 'Attempting?'
+        setTimeout =>
+          @get('datepicker').open()
+        , 0
+
     signOut: ->
       @get('controllers.user').signOut()
 

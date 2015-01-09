@@ -49,7 +49,7 @@ gem 'rails-assets-jquery'
 # Additional Static Assets
 gem 'rails-assets-jquery-validate'
 gem 'rails-assets-normalize-css'
-gem 'rails-assets-pickadate'
+gem 'rails-assets-pickadate', '~> 3.5.4'
 gem 'rails-assets-moment'
 gem 'rails-assets-jquery.transit'
 
