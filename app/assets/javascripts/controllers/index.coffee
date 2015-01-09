@@ -3,9 +3,11 @@ Pluto.IndexController = Em.Controller.extend
 
   actions:
     submitEntry: ->
-      formData = @getEntryFormData()
+      form_data = @getEntryFormData()
       # Pretend to submit the form then show success ->
-      @showNewLog formData.time
+      @submitEntryRequest(form_data).then =>
+        @showNewLog form_data.unformatted_time
+        @clearForm()
 
     signOut: ->
       @get('controllers.user').signOut()
@@ -24,11 +26,21 @@ Pluto.IndexController = Em.Controller.extend
 
   todayValue: moment().format('L')
 
+  submitEntryRequest: (form_data) ->
+    $.ajax
+      url: '/logs'
+      type: 'post'
+      dataType: 'json'
+      data:
+        authenticity_token: $('meta[name="csrf-token"]').attr('content')
+        log: form_data
+
   getEntryFormData: ->
-    formData = {}
+    form_data = {}
     for field in $('.entry-form').serializeArray()
-      formData[field.name] = field.value
-    formData
+      form_data[field.name] = field.value
+    form_data.time = @getMinutes form_data.unformatted_time
+    form_data
 
   showNewLog: (time) ->
     hours = @parseHours time
@@ -52,6 +64,11 @@ Pluto.IndexController = Em.Controller.extend
         $log.remove()
     , 2300
 
+  clearForm: ->
+    $('.entry-form .time input[type=text]').val('')
+
+  getMinutes: (time) ->
+    (@parseHours(time) * 60) + @parseMinutes(time)
 
   parseHours: (time) ->
     parseInt time.match(/^\d+/)[0]

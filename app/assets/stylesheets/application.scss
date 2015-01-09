@@ -139,7 +139,9 @@
       display: none;
       &:checked + label {
         background: rgba(255,255,255,.4);
-        cursor: default;
+        &:not([for="selected-date"]) {
+          cursor: default;
+        }
         &:hover {
           color: #fff;
           svg {
@@ -168,17 +170,18 @@
       }
     }
   }
+
   .time {
     padding: 1rem;
     background: rgba(255,255,255,.4);
-  }
-  input[name=time] {
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 4rem;
-    font-weight: 400;
-    text-align: center;
-    padding: .5rem;
+    input[type=text] {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 4rem;
+      font-weight: 400;
+      text-align: center;
+      padding: .5rem;
+    }
   }
 
   .location-toggle {

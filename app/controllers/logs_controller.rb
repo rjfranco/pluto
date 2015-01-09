@@ -1,7 +1,7 @@
 class LogsController < ApplicationController
   before_action :set_log, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :json
 
   def index
     @logs = Log.all
@@ -21,9 +21,12 @@ class LogsController < ApplicationController
   end
 
   def create
-    @log = Log.new(log_params)
-    @log.save
-    respond_with(@log)
+    if current_user
+      @log = Log.new(log_params)
+      @log.user = current_user
+      @log.save
+      respond_with(@log)
+    end
   end
 
   def update
