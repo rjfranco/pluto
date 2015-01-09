@@ -4,7 +4,7 @@
 @import 'forms';
 @import 'buttons';
 
-.application {
+.full-height {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -219,12 +219,13 @@
     padding: .5rem 0 .3rem;
     font-size: 1.25rem;
     margin-top: 2rem;
+    outline: none;
   }
 }
 
 .log-notice {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateY(100%);
   max-width: 25rem;
   text-align: center;
   background: #60ca68;

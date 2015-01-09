@@ -1,4 +1,5 @@
 Pluto.IndexView = Em.View.extend
+  classNames: ['full-height']
   didInsertElement: ->
     $('.entry-form').validate
       rules:

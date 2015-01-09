@@ -1,3 +1,3 @@
 Pluto.ApplicationView = Em.View.extend
   tagName: 'section'
-  classNames: ['application']
+  classNames: ['full-height']

@@ -1,6 +1,7 @@
 #= require jquery
 #= require jquery-validate
 #= require ./libraries/jquery-validate-regex
+#= require ./libraries/to-word
 #= require moment
 #= require jquery.transit
 #= require handlebars
