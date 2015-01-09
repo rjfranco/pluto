@@ -10,10 +10,7 @@ Pluto.IndexController = Em.Controller.extend
         @clearForm()
 
     triggerCalendar: ->
-      console.log 'Triggering?'
-      console.log @get('datepicker').get('open')
       unless @get('datepicker').get('open')
-        console.log 'Attempting?'
         setTimeout =>
           @get('datepicker').open()
         , 0
