@@ -10,4 +10,4 @@ Pluto.ApplicationRoute = Em.Route.extend
     .then (data) =>
       if data.user
         user_controller = @controllerFor 'user'
-        user_controller.set 'content', Pluto.User.create(data.user)
+        user_controller.set 'model', Pluto.User.create(data.user)

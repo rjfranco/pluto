@@ -59,6 +59,7 @@
   background: rgba(0,0,0,.35);
   overflow: hidden;
   position: relative;
+
   h1 {
     display: inline-block;
     margin: 1rem;
@@ -69,15 +70,22 @@
       }
     }
   }
+
   .header-actions {
     position: absolute;
+    padding: 1.25rem;
     top: 0;
     right: 0;
-    button {
-      display: block;
+
+    button, a {
+      display: inline-block;
       background: none;
       border: 0;
-      margin: 1rem;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      span {
+        display: none;
+      }
       svg {
         display: block;
         height: 2rem;
@@ -86,10 +94,21 @@
           fill: #fff;
         }
       }
-    }
-    .signout {
-      span {
-        display: none;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.profile-link {
+        svg {
+          position: relative;
+          top: .15rem;
+        }
+      }
+      &:hover {
+        svg {
+          use {
+            fill: #ddd;
+          }
+        }
       }
     }
   }

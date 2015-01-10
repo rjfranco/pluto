@@ -19,8 +19,8 @@ Pluto.IndexController = Em.Controller.extend
       @get('controllers.user').signOut()
 
   userLoggedIn: Em.computed ->
-    !!@get('controllers.user.content')
-  .property('controllers.user.content')
+    !!@get('controllers.user.model')
+  .property('controllers.user.model')
 
   dayBefore: moment().subtract(2, 'days').format('MMM Do')
 
@@ -31,6 +31,11 @@ Pluto.IndexController = Em.Controller.extend
   yesterdayValue: moment().subtract(1, 'days').format('L')
 
   todayValue: moment().format('L')
+
+  profileURL: Em.computed ->
+    user = @get('controllers.user.model')
+    user.get('profile_url')
+  .property('controllers.user.model.profile_url')
 
   submitEntryRequest: (form_data) ->
     $.ajax

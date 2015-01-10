@@ -3,7 +3,7 @@
 Pluto.Router.reopen
   location: 'history'
 
-Pluto.Router.map ()->
-  # @resource('posts')
+Pluto.Router.map ->
   @route 'sign-up'
   @route 'sign-in'
+  @route 'profile', { path: '/profile/:profile_url' }
