@@ -97,17 +97,23 @@
       &:last-child {
         margin-right: 0;
       }
-      &.profile-link {
-        svg {
-          position: relative;
-          top: .15rem;
-        }
-      }
       &:hover {
         svg {
           use {
             fill: #ddd;
           }
+        }
+      }
+    }
+    a {
+      svg {
+        position: relative;
+        top: .16rem;
+      }
+      &.document {
+        svg {
+          top: 0;
+          position: relative;
         }
       }
     }

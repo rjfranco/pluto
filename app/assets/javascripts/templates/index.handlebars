@@ -2,9 +2,9 @@
   <header class="small-header">
     <h1>{{#link-to 'index'}}Pluto{{/link-to}}</h1>
     <div class="header-actions">
-      {{#link-to 'profile' profileURL classNames="profile-link"}}
-        {{svg 'share'}}
-        <span>Share</span>
+      {{#link-to 'profile' profileURL}}
+        {{svg 'bar-chart'}}
+        <span>Report</span>
       {{/link-to}}
       <button {{action 'signOut'}} class="signout">
         {{svg 'account-logout'}}

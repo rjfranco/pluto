@@ -1,0 +1,15 @@
+<header class="small-header">
+  <h1>{{#link-to 'index'}}Pluto{{/link-to}}</h1>
+  {{#if userLoggedIn}}
+    <div class="header-actions">
+      {{#link-to 'index' classNames="document"}}
+        {{svg 'document'}}
+        <span>Share</span>
+      {{/link-to}}
+      <button {{action 'signOut'}} class="signout">
+        {{svg 'account-logout'}}
+        <span>Sign Out</span>
+      </button>
+    </div>
+  {{/if}}
+</header>
