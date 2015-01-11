@@ -16,34 +16,16 @@ Pluto.ProfileController = Em.Controller.extend
   .property('controllers.user.model')
 
   totalHours: Em.computed ->
-    total_minutes = @get('controllers.logs').reduce (previousTotal, log) ->
-      previousTotal + log.get('time')
-    , 0
-
-    @formattedTime total_minutes
-  .property('controllers.logs.@each')
+    @formattedTime @get('controllers.logs.totalTime')
+  .property('controllers.logs.totalTime')
 
   offsiteHours: Em.computed ->
-    total_minutes = @get('controllers.logs').reduce (previousTotal, log) ->
-      if log.get('remote')
-        previousTotal + log.get('time')
-      else
-        previousTotal
-    , 0
-
-    @formattedTime total_minutes
-  .property('controllers.logs.@each')
+    @formattedTime @get('controllers.logs.offsiteTime')
+  .property('controllers.logs.offsiteTime')
 
   onsiteHours: Em.computed ->
-    total_minutes = @get('controllers.logs').reduce (previousTotal, log) ->
-      unless log.get('remote')
-        previousTotal + log.get('time')
-      else
-        previousTotal
-    , 0
-
-    @formattedTime total_minutes
-  .property('controllers.logs.@each')
+    @formattedTime @get('controllers.logs.onsiteTime')
+  .property('controllers.logs.onsiteTime')
 
   formattedTime: (total_minutes) ->
     hours = Math.floor(total_minutes / 60)

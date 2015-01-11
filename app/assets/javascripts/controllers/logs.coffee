@@ -12,28 +12,38 @@ Pluto.LogsController = Em.ArrayController.extend
         Pluto.Log.create(log)
       @set 'model', logs
 
+  totalTime: Em.computed ->
+    @reduce (previousTotal, log) ->
+      previousTotal + log.get('time')
+    , 0
+  .property('@each')
+
+  offsiteTime: Em.computed ->
+    @reduce (previousTotal, log) ->
+      if log.get('remote')
+        previousTotal + log.get('time')
+      else
+        previousTotal
+    , 0
+  .property('@each')
+
+  onsiteTime: Em.computed ->
+    @get('totalTime') - @get('offsiteTime')
+  .property('totalTime', 'offsiteTime')
+
   onsiteVsOffsiteReport: ->
-    onsite_log = @filterProperty 'remote', false
-    offsite_log = @filterProperty 'remote', true
-
-    onsite_count = 0
-    offsite_count = 0
-
-    for log in onsite_log
-      onsite_count += log.get('time')
-
-    for log in offsite_log
-      offsite_count += log.get('time')
+    offsite_percentage = Math.round(@get('offsiteTime') / @get('totalTime') * 100)
+    onsite_percent = 100 - offsite_percentage
 
     [
       {
-        value: onsite_count
+        value: onsite_percent
         label: 'On-site'
         color: '#159de4'
         highlight: '#078ed4'
       },
       {
-        value: offsite_count
+        value: offsite_percentage
         label: 'Off-site'
         color: '#c6ebfe'
         highlight: '#acd9f1'
