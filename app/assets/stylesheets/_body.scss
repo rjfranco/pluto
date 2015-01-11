@@ -9,6 +9,6 @@ body {
   background-image: repeating-linear-gradient(to bottom right,rgb(0, 07, 18) 0%,rgb(0, 33, 77) 100%);
   background-image: -ms-repeating-linear-gradient(top left,rgb(0, 07, 18) 0%,rgb(0, 33, 77) 100%);
   color: #fff;
-  font-family: 'Gotham SSm A', 'Gotham SSm B';
+  font-family: $sans-serif;
   font-weight: 300;
 }

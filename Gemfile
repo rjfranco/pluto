@@ -52,6 +52,7 @@ gem 'rails-assets-normalize-css'
 gem 'rails-assets-pickadate', '~> 3.5.4'
 gem 'rails-assets-moment'
 gem 'rails-assets-jquery.transit'
+gem 'rails-assets-Chart.js'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'

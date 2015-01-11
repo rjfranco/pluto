@@ -1,7 +1,11 @@
+$serif: 'Didot 24 A', 'Didot 24 B';
+$serif-large: 'Didot 64 A', 'Didot 64 B';
+$sans-serif: 'Gotham SSm A', 'Gotham SSm B';
+
 h1 {
   font-weight: 300;
   font-size: 2rem;
-  font-family: 'Didot 24 A', 'Didot 24 B';
+  font-family: $serif;
   text-transform: uppercase;
   letter-spacing: .25rem;
 }

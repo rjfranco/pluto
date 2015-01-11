@@ -1,6 +1,6 @@
 @import 'normalize-css';
-@import 'body';
 @import 'typography';
+@import 'body';
 @import 'forms';
 @import 'buttons';
 @import 'pickadate/lib/themes/default.scss';
@@ -265,4 +265,60 @@
   background: #60ca68;
   padding: 1rem 2rem;
   margin: 1rem auto;
+}
+
+.percentage {
+  background: rgba(255,255,255,.4);
+  margin: 2rem;
+  float: left;
+  width: 100%;
+  height: 80vh;
+  max-width: 40rem;
+  header {
+    background: rgba(255,255,255,.4);
+    overflow: hidden;
+    position: relative;
+    h2 {
+      margin: 1rem;
+      font-weight: 300;
+    }
+    ul {
+      position: absolute;
+      top: .9rem;
+      right: .25rem;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        white-space: nowrap;
+        &:not(:first-child) {
+          padding-right: 1.15rem;
+          margin-left: 1.5rem;
+        }
+        svg {
+          display: inline;
+          max-width: 1rem;
+          max-height: 1rem;
+          position: relative;
+          top: .1rem;
+          left: .25rem;
+          use { fill: #159de4; }
+        }
+        &:last-child {
+          svg use { fill: #c6ebfe; }
+        }
+        span {
+          display: block;
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+}
+
+#standard-report {
+  display: block;
+  margin: 2rem auto;
+  width: 100%;
+  height: auto;
 }

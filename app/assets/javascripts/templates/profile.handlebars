@@ -13,3 +13,17 @@
     </div>
   {{/if}}
 </header>
+
+<content class="profile">
+  <section class="percentage">
+    <header>
+      <h2>Totals</h2>
+      <ul class="key">
+        <li>Total <span>{{totalHours}}</span></li>
+        <li>On-site{{svg 'media-record'}}<span>{{onsiteHours}}</span></li>
+        <li>Off-site{{svg 'media-record'}}<span>{{offsiteHours}}</span></li>
+      </ul>
+    </header>
+    <canvas id="standard-report"></canvas>
+  </section>
+</content>
