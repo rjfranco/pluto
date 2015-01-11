@@ -1,0 +1,38 @@
+<header class="small-header">
+  <h1>{{#link-to 'index'}}Pluto{{/link-to}}</h1>
+  <div class="header-actions">
+    {{#link-to 'profile' profileURL}}
+    {{svg 'bar-chart'}}
+    <span>Report</span>
+    {{/link-to}}
+    <button {{action 'signOut'}} class="signout">
+      {{svg 'account-logout'}}
+      <span>Sign Out</span>
+    </button>
+  </div>
+</header>
+<form class="entry-form" {{action 'submitEntry' on='submit'}}>
+  <ul>
+    <li class="date-toggle">
+      <input type="radio" name="date" id="day-before" {{bind-attr value="dayBeforeValue"}} />
+      <label for="day-before">{{dayBefore}}</label>
+      <input type="radio" name="date" id="yesterday" {{bind-attr value="yesterdayValue"}}/>
+      <label for="yesterday">{{yesterday}}</label>
+      <input type="radio" name="date" id="today" checked="checked" {{bind-attr value="todayValue"}} />
+      <label for="today">Today</label>
+      <input type="radio" name="date" id="selected-date" />
+      <label for="selected-date" {{action 'triggerCalendar'}}>{{svg 'calendar'}} Calendar</label>
+      <input type="hidden" name="hidden-date-field" id="selected-date-input" />
+    </li>
+    <li class="time">
+      <input type="text" name="unformatted_time" placeholder="time" />
+    </li>
+    <li class="location-toggle">
+      <input type="radio" name="remote" id="onsite" value="0" checked="checked" />
+      <label for="onsite">On-site</label>
+      <input type="radio" name="remote" id="remote" value="1" />
+      <label for="remote">Remote</label>
+    </li>
+  </ul>
+  <button type="submit">Log it.</button>
+</form>
