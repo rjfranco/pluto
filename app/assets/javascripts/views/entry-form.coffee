@@ -9,9 +9,9 @@ Pluto.EntryFormView = Em.View.extend
   setupFormValidation: ->
     $('.entry-form').validate
       rules:
-        time: 'required'
+        unformatted_time: 'required'
       messages:
-        time: 'How many hours do you need to log?'
+        unformatted_time: 'How many hours do you need to log?'
 
   setupDatePicker: ->
     @set 'default_calendar_tab', $('[for="selected-date"]').html()
