@@ -37,6 +37,25 @@ Pluto.ProfileView = Em.View.extend
 
     controller.set name, picker.pickadate('picker')
 
-    controller.get(name).on 'set', (context) =>
-      # I don't understand why this is a day behind, not looking into it now.
-      controller.set value, moment(context.select).add(1, 'days').format('L')
+    controller.get(name).on 'close', =>
+      controller.set value, controller.get(name).get('select', 'mm/dd/yyyy')
+      @updateLogs() if @validDateRange()
+
+  validDateRange: ->
+    controller = @get('controller')
+    moment(controller.get('start_date'), 'L').isBefore moment(controller.get('end_date'), 'L')
+
+  updateLogs: ->
+    controller = @get('controller')
+    logs_controller = controller.get('controllers.logs')
+
+    logs_controller.getLogsFor
+      profile: controller.get('profile_url')
+      start_date: controller.get('start_date')
+      end_date: controller.get('end_date')
+    .then =>
+      chart = @get('main_chart')
+      data = logs_controller.onsiteVsOffsiteReport()
+
+      chart.data = data
+      chart.update()
