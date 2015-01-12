@@ -5,8 +5,8 @@ class LogsController < ApplicationController
 
   def index
     user = User.where(profile_url: params[:profile_url])
-    start_date = Date.strptime(params[:start_date], '%m/%d/%Y')
-    end_date = Date.strptime(params[:end_date], '%m/%d/%Y')
+    start_date = Date.parse params[:start_date]
+    end_date = Date.parse params[:end_date]
     date_range = (start_date..end_date)
     @logs = Log.where(user: user, date: date_range)
     respond_with(@logs)

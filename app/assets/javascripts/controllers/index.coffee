@@ -24,13 +24,13 @@ Pluto.IndexController = Em.Controller.extend
 
   dayBefore: moment().subtract(2, 'days').format('MMM Do')
 
-  dayBeforeValue: moment().subtract(2, 'days').format('L')
+  dayBeforeValue: moment().subtract(2, 'days').format('YYYY-MM-DD')
 
   yesterday: moment().subtract(1, 'days').format('MMM Do')
 
-  yesterdayValue: moment().subtract(1, 'days').format('L')
+  yesterdayValue: moment().subtract(1, 'days').format('YYYY-MM-DD')
 
-  todayValue: moment().format('L')
+  todayValue: moment().format('YYYY-MM-DD')
 
   profileURL: Em.computed ->
     user = @get('controllers.user.model')

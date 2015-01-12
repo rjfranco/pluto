@@ -15,8 +15,8 @@ Pluto.ProfileRoute = Em.Route.extend
       end_date: @profile_controller.get('end_date')
 
   setInitialTimeframe: ->
-    @profile_controller.set 'start_date', moment().subtract({ days: 30 }).format('L')
-    @profile_controller.set 'end_date', moment().format('L')
+    @profile_controller.set 'start_date', moment().subtract({ days: 30 }).format('YYYY-MM-DD')
+    @profile_controller.set 'end_date', moment().format('YYYY-MM-DD')
 
   hasTimeframe: ->
     @profile_controller.get('start_date') and @profile_controller.get('end_date')

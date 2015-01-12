@@ -33,17 +33,17 @@ Pluto.ProfileView = Em.View.extend
     picker = $(element).pickadate
       hiddenName: true
       clear: false
-      formatSubmit: 'mm/dd/yyyy'
+      formatSubmit: 'yyyy-mm-dd'
 
     controller.set name, picker.pickadate('picker')
 
     controller.get(name).on 'close', =>
-      controller.set value, controller.get(name).get('select', 'mm/dd/yyyy')
+      controller.set value, controller.get(name).get('select', 'yyyy-mm-dd')
       @updateLogs() if @validDateRange()
 
   validDateRange: ->
     controller = @get('controller')
-    moment(controller.get('start_date'), 'L').isBefore moment(controller.get('end_date'), 'L')
+    moment(controller.get('start_date')).isBefore moment(controller.get('end_date'))
 
   updateLogs: ->
     controller = @get('controller')
