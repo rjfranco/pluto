@@ -15,7 +15,7 @@ Pluto.ProfileView = Em.View.extend
       showTooltips: true
 
   setMainChartCanvasSize: ->
-    new_height = $('.percentage').height() - $('.percentage header').height() - 64
+    new_height = $('.percentage').height() - $('.percentage header').height() - $('.percentage .date-selector').height() - 64
     new_width = $('.percentage').width() - 64
     $("#standard-report").attr
       width: new_width

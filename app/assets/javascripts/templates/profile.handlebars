@@ -24,6 +24,17 @@
         <li>Off-site{{svg 'media-record'}}<span>{{offsiteHours}}</span></li>
       </ul>
     </header>
+    <div class="date-selector">
+      <button class="start" {{action 'triggerCalendar' 'start_datepicker'}}>
+        {{svg 'calendar'}}
+        {{formattedStartDate}}
+      </button>
+      to
+      <button class="end" {{action 'triggerCalendar' 'end_datepicker'}}>
+        {{svg 'calendar'}}
+        {{formattedEndDate}}
+      </button>
+    </div>
     <canvas id="standard-report"></canvas>
   </section>
 </content>

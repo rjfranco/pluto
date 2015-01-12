@@ -2,14 +2,25 @@ Pluto.ProfileController = Em.Controller.extend
   needs: ['user', 'logs']
 
   actions:
-    # triggerCalendar: ->
-    #   unless @get('datepicker').get('open')
-    #     setTimeout =>
-    #       @get('datepicker').open()
-    #     , 0
+    triggerCalendar: (picker) ->
+      unless @get(picker).get('open')
+        setTimeout =>
+          @get(picker).open()
+        , 0
 
     signOut: ->
       @get('controllers.user').signOut()
+
+  formattedStartDate: Em.computed ->
+    moment(@get('start_date'), 'L').format 'MMM Do'
+  .property 'start_date'
+
+  formattedEndDate: Em.computed ->
+    if @get('end_date') is moment().format('L')
+      'Today'
+    else
+      moment(@get('end_date'), 'L').format 'MMM Do'
+  .property 'end_date'
 
   userLoggedIn: Em.computed ->
     !!@get('controllers.user.model')
@@ -32,6 +43,6 @@ Pluto.ProfileController = Em.Controller.extend
     minutes = total_minutes % 60
 
     hours_string = "#{hours} hours"
-    minutes_string = if minutes then " and #{minutes} minutes" else ''
+    minutes_string = if minutes then " and #{minutes} min" else ''
 
     hours_string + minutes_string
