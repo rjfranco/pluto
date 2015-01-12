@@ -4,7 +4,11 @@ class LogsController < ApplicationController
   respond_to :json
 
   def index
-    @logs = Log.all
+    user = User.where(profile_url: params[:profile_url])
+    start_date = Date.strptime(params[:start_date], '%m/%d/%Y')
+    end_date = Date.strptime(params[:end_date], '%m/%d/%Y')
+    date_range = (start_date..end_date)
+    @logs = Log.where(user: user, date: date_range)
     respond_with(@logs)
   end
 

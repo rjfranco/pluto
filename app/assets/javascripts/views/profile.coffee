@@ -50,7 +50,7 @@ Pluto.ProfileView = Em.View.extend
     logs_controller = controller.get('controllers.logs')
 
     logs_controller.getLogsFor
-      profile: controller.get('profile_url')
+      profile_url: controller.get('model.profile_url')
       start_date: controller.get('start_date')
       end_date: controller.get('end_date')
     .then =>

@@ -1,12 +1,14 @@
 Pluto.LogsController = Em.ArrayController.extend
-  getLogsFor: (profile_url) ->
+  getLogsFor: (options) ->
     $.ajax
       url: '/logs'
       type: 'get'
       dataType: 'json'
       data:
         authenticity_token: $('meta[name="csrf-token"]').attr('content')
-        profile_url: profile_url
+        profile_url: options.profile_url
+        start_date: options.start_date
+        end_date: options.end_date
     .then (data) =>
       logs = for log in data
         Pluto.Log.create(log)
