@@ -78,6 +78,7 @@
     right: 0;
 
     button, a {
+      @extend %button;
       display: inline-block;
       background: none;
       border: 0;
@@ -242,6 +243,7 @@
   }
 
   [type=submit] {
+    @extend %button;
     box-sizing: border-box;
     padding: 0;
     border-bottom-width: .5rem;
@@ -316,7 +318,8 @@
   .date-selector {
     display: inline-block;
     background: rgba(255,255,255,.4);
-    button {
+    .button {
+      @extend %button;
       border-bottom: 0;
       background: 0;
       color: #fff;
