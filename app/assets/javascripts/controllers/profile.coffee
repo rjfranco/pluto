@@ -12,14 +12,14 @@ Pluto.ProfileController = Em.Controller.extend
       @get('controllers.user').signOut()
 
   formattedStartDate: Em.computed ->
-    moment(@get('start_date'), 'L').format 'MMM Do'
+    moment(@get('start_date')).format 'MMM Do'
   .property 'start_date'
 
   formattedEndDate: Em.computed ->
-    if @get('end_date') is moment().format('L')
+    if @get('end_date') is moment().format('YYYY-MM-DD')
       'Today'
     else
-      moment(@get('end_date'), 'L').format 'MMM Do'
+      moment(@get('end_date')).format 'MMM Do'
   .property 'end_date'
 
   userLoggedIn: Em.computed ->
