@@ -25,12 +25,14 @@
       </ul>
     </header>
     <div class="date-selector">
-      <button class="start" {{action 'triggerCalendar' 'start_datepicker'}}>
+      <input type="hidden" id="start-datepicker-value" {{bind-attr value="start_date"}} {{bind-attr data-value="start_date"}} />
+      <button class="start" {{action 'triggerCalendar' 'start-datepicker'}}>
         {{svg 'calendar'}}
         {{formattedStartDate}}
       </button>
       to
-      <button class="end" {{action 'triggerCalendar' 'end_datepicker'}}>
+      <input type="hidden" id="end-datepicker-value" {{bind-attr value="end_date"}} {{bind-attr data-value="end_date"}} />
+      <button class="end" {{action 'triggerCalendar' 'end-datepicker'}}>
         {{svg 'calendar'}}
         {{formattedEndDate}}
       </button>

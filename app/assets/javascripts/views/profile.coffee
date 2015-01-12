@@ -1,6 +1,7 @@
 Pluto.ProfileView = Em.View.extend
   didInsertElement: ->
     @setupMainChart()
+    @setupDatePickers()
 
   setupMainChart: ->
     @setMainChartCanvasSize()
@@ -20,3 +21,22 @@ Pluto.ProfileView = Em.View.extend
     $("#standard-report").attr
       width: new_width
       height: new_height
+
+  setupDatePickers: ->
+    @setupDatePicker 'start-datepicker', 'start_date'
+    @setupDatePicker 'end-datepicker', 'end_date'
+
+  setupDatePicker: (name, value) ->
+    controller = @get('controller')
+    element = "##{name}-value"
+
+    picker = $(element).pickadate
+      hiddenName: true
+      clear: false
+      formatSubmit: 'mm/dd/yyyy'
+
+    controller.set name, picker.pickadate('picker')
+
+    controller.get(name).on 'set', (context) =>
+      # I don't understand why this is a day behind, not looking into it now.
+      controller.set value, moment(context.select).add(1, 'days').format('L')
