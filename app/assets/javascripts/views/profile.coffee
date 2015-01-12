@@ -14,10 +14,11 @@ Pluto.ProfileView = Em.View.extend
         @showTooltip @segments, true
       tooltipEvents: []
       showTooltips: true
+      responsive: true
 
   setMainChartCanvasSize: ->
-    new_height = $('.percentage').height() - $('.percentage header').height() - $('.percentage .date-selector').height() - 64
-    new_width = $('.percentage').width() - 64
+    new_height = $('.pie-chart').innerHeight()
+    new_width = $('.pie-chart').innerWidth()
     $("#standard-report").attr
       width: new_width
       height: new_height
@@ -56,6 +57,9 @@ Pluto.ProfileView = Em.View.extend
     .then =>
       chart = @get('main_chart')
       data = logs_controller.onsiteVsOffsiteReport()
+
+      console.log 'New data is:', data
+      debugger
 
       chart.data = data
       chart.update()
