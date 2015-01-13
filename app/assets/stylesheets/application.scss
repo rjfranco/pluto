@@ -47,7 +47,7 @@
     .actions {
       text-align: center;
       a {
-        @extend button;
+        @extend %button;
       }
     }
   }
@@ -99,6 +99,7 @@
         margin-right: 0;
       }
       &:hover {
+        background: none;
         svg {
           use {
             fill: #ddd;
