@@ -38,6 +38,13 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Used for deploys
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem "capistrano-db-tasks", require: false
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -68,9 +75,6 @@ gem 'puma-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
