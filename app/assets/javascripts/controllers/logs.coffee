@@ -12,7 +12,10 @@ Pluto.LogsController = Em.ArrayController.extend
     .then (data) =>
       logs = for log in data
         Pluto.Log.create(log)
-      @set 'model', logs
+      if options.return_model
+        logs
+      else
+        @set 'model', logs
 
   totalTime: Em.computed ->
     @reduce (previousTotal, log) ->
@@ -51,3 +54,7 @@ Pluto.LogsController = Em.ArrayController.extend
         highlight: '#acd9f1'
       }
     ]
+
+  hasLogs: Em.computed ->
+    @get('model').length
+  .property('@each')

@@ -1,0 +1,75 @@
+.full-height {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 100%;
+  min-height: 100%;
+}
+
+.small-header {
+  margin: 0;
+  background: rgba(0,0,0,.35);
+  overflow: hidden;
+  position: relative;
+
+  h1 {
+    display: inline-block;
+    margin: 1rem;
+    a {
+      color: #fff;
+      &:hover {
+        color: #ddd;
+      }
+    }
+  }
+
+  .header-actions {
+    position: absolute;
+    padding: 1.25rem;
+    top: 0;
+    right: 0;
+
+    button, a {
+      @extend %button;
+      display: inline-block;
+      background: none;
+      border: 0;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      span {
+        display: none;
+      }
+      svg {
+        display: block;
+        height: 2rem;
+        width: 2rem;
+        use {
+          fill: #fff;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        background: none;
+        svg {
+          use {
+            fill: #ddd;
+          }
+        }
+      }
+    }
+    a {
+      svg {
+        position: relative;
+        top: .16rem;
+      }
+      &.document {
+        svg {
+          top: 0;
+          position: relative;
+        }
+      }
+    }
+  }
+}

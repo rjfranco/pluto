@@ -1,0 +1,133 @@
+.entry-form {
+  background: rgba(255,255,255,.4);
+  max-width: 25rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+    li {
+      display: block;
+    }
+  }
+  input {
+    color: #000;
+    outline: none;
+  }
+  .date-toggle {
+    label {
+      background: rgba(255,255,255,.2);
+      padding: .41rem .5rem;
+      display: inline-block;
+      cursor: pointer;
+      &:hover {
+        background: #fff;
+        color: #555;
+      }
+    }
+    input[type=radio] {
+      display: none;
+      &:checked + label {
+        background: rgba(255,255,255,.4);
+        &:not([for="selected-date"]) {
+          cursor: default;
+        }
+        &:hover {
+          color: #fff;
+          svg {
+            use {
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  label[for=selected-date] {
+    svg {
+      width: 1rem;
+      position: relative;
+      top: .1rem;
+      use {
+        fill: #fff;
+      }
+    }
+    &:hover {
+      svg {
+        use {
+          fill: #555;
+        }
+      }
+    }
+  }
+
+  .picker__input {
+    display: none;
+  }
+
+  .time {
+    padding: 1rem;
+    background: rgba(255,255,255,.4);
+    input[type=text] {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 4rem;
+      font-weight: 400;
+      text-align: center;
+      padding: .5rem;
+    }
+  }
+
+  .location-toggle {
+    overflow: hidden;
+    label {
+      background: rgba(255,255,255,.2);
+      cursor: pointer;
+      display: block;
+      float: left;
+      width: 50%;
+      text-align: center;
+      line-height: 2.1;
+    }
+    input[type=radio] {
+      display: none;
+      &:checked + label {
+        background: rgba(255,255,255,.4);
+        cursor: default;
+      }
+    }
+  }
+
+  label.error {
+    background: rgba(255,0,0,.4);
+    display: block;
+    padding: .5rem
+  }
+
+  [type=submit] {
+    @extend %button;
+    box-sizing: border-box;
+    padding: 0;
+    border-bottom-width: .5rem;
+    display: block;
+    width: 100%;
+    line-height: 2.1;
+    font-weight: 400;
+    color: #555;
+    padding: .5rem 0 .3rem;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    outline: none;
+  }
+}
+
+.log-notice {
+  opacity: 0;
+  transform: translateY(100%);
+  max-width: 25rem;
+  text-align: center;
+  background: #60ca68;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+}

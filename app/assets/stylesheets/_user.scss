@@ -1,0 +1,13 @@
+#signin-form {
+  @extend %account-form;
+}
+
+#signup-form {
+  @extend %account-form;
+  label[for=password_confirmation] {
+    font-size: .7rem;
+    padding: .65rem .5rem;
+    position: relative;
+    top: -.1rem;
+  }
+}

@@ -1,0 +1,88 @@
+
+.percentage {
+  background: rgba(255,255,255,.4);
+  margin: 2rem;
+  float: left;
+  width: 100%;
+  height: 40rem;
+  max-width: 40rem;
+  header {
+    overflow: hidden;
+    position: relative;
+    h2 {
+      margin: 1rem;
+      font-weight: 300;
+    }
+    ul {
+      position: absolute;
+      top: .9rem;
+      right: .25rem;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        white-space: nowrap;
+        &:not(:first-child) {
+          padding-right: 1.15rem;
+          margin-left: 1.5rem;
+        }
+        svg {
+          display: inline;
+          max-width: 1rem;
+          max-height: 1rem;
+          position: relative;
+          top: .1rem;
+          left: .25rem;
+          use { fill: #159de4; }
+        }
+        &:last-child {
+          margin-right: 1rem;
+          svg use { fill: #c6ebfe; }
+        }
+        span {
+          display: block;
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+  .date-selector {
+    display: inline-block;
+    background: rgba(255,255,255,.4);
+    .button {
+      @extend %button;
+      border-bottom: 0;
+      background: 0;
+      color: #fff;
+      outline: none;
+      padding: .5rem;
+      svg {
+        top: .1rem;
+        use {
+          fill: #fff;
+        }
+      }
+      &.start {
+        padding-left: .6rem;
+      }
+      &.end {
+        padding-right: .6rem;
+      }
+      &:hover {
+        background: rgba(255,255,255,.2);
+      }
+    }
+    .picker__input {
+      display: none;
+    }
+  }
+}
+
+.pie-chart {
+  display: block;
+  padding: 2rem;
+  background: rgba(255,255,255,.4);
+  width: 100%;
+  height: 33.7rem;
+  box-sizing: border-box;
+}

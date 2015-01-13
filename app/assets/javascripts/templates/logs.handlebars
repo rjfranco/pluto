@@ -1,0 +1,41 @@
+<header class="small-header">
+  <h1>{{#link-to 'index'}}Pluto{{/link-to}}</h1>
+  {{#if userLoggedIn}}
+  <div class="header-actions">
+    {{#link-to 'index' classNames="document"}}
+    {{svg 'document'}}
+    <span>Share</span>
+    {{/link-to}}
+    <button {{action 'signOut'}} class="signout">
+      {{svg 'account-logout'}}
+      <span>Sign Out</span>
+    </button>
+  </div>
+  {{/if}}
+</header>
+
+<content class="logs">
+  <header>
+    <h2>Time Log Entries</h2>
+  </header>
+  {{#if hasLogs}}
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each log in controller}}
+          <tr>
+            <td>{{log.displayDate}}</td>
+            <td>{{log.displayTime}}</td>
+            <td>{{log.location}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</content>
