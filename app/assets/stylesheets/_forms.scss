@@ -2,7 +2,7 @@
   display: block;
   text-align: center;
   width: 29.05rem;
-  margin: 2rem auto;
+  margin: 3rem auto;
 
   ul {
     display: block;
@@ -59,7 +59,8 @@
   }
 
   button {
-    margin: 2rem 0;
+    @extend %button;
+    margin: 1rem 0;
     padding: .5rem 1rem;
   }
 }

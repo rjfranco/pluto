@@ -34,7 +34,7 @@ Pluto.IndexController = Em.Controller.extend
 
   profileURL: Em.computed ->
     user = @get('controllers.user.model')
-    user.get('profile_url')
+    user?.get('profile_url')
   .property('controllers.user.model.profile_url')
 
   submitEntryRequest: (form_data) ->
