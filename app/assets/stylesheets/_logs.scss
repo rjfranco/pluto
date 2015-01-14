@@ -1,3 +1,53 @@
 .logs {
-
+  max-width: 76rem;
+  background: rgba(255,255,255,.4);
+  overflow: hidden;
+  margin: 2rem auto;
+  header {
+    h2 {
+      margin: 1rem;
+    }
+  }
+  .table-wrapper {
+    margin: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+      tr {
+        background: rgba(255,255,255,.4);
+        th {
+          padding: .5rem;
+          text-align: left;
+          &:last-of-type {
+            width: 5.15rem;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        background: rgba(255,255,255,.1);
+        &:nth-child(even) {
+          background: rgba(255,255,255,.3);
+        }
+        td {
+          padding: .3rem .5rem;
+          &:last-of-type {
+            width: 5.15rem;
+            text-align: left;
+          }
+          &.onsite {
+            background: rgb(200,206,213);
+            color: #333;
+          }
+          &.offsite {
+            background: rgb(69,78,89);
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
 }

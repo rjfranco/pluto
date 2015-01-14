@@ -14,28 +14,30 @@
   {{/if}}
 </header>
 
-<content class="logs">
+<main class="logs">
   <header>
     <h2>Time Log Entries</h2>
   </header>
   {{#if hasLogs}}
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each log in controller}}
+    <div class="table-wrapper">
+      <table>
+        <thead>
           <tr>
-            <td>{{log.displayDate}}</td>
-            <td>{{log.displayTime}}</td>
-            <td>{{log.location}}</td>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
           </tr>
-        {{/each}}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {{#each log in controller}}
+            <tr>
+              <td>{{log.displayDate}}</td>
+              <td>{{log.displayTime}}</td>
+              <td {{bind-attr class="log.remote:offsite:onsite"}}>{{log.location}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   {{/if}}
 </content>

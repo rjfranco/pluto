@@ -5,7 +5,7 @@ Pluto.Log = Em.Object.extend Pluto.TimeManipulation,
   klass: 'log'
 
   displayDate: Em.computed ->
-    moment(@get('date')).format 'MMM Do'
+    moment(@get('date')).format 'dddd, MMMM Do YYYY'
   .property('date')
 
   displayTime: Em.computed ->
