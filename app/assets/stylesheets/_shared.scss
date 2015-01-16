@@ -64,6 +64,15 @@
         position: relative;
         top: .16rem;
       }
+      &.list {
+        margin-right: 1.75rem;
+      }
+      &.entry-form {
+        margin-right: 1.75rem;
+        svg {
+          top: 0;
+        }
+      }
       &.document {
         svg {
           top: 0;

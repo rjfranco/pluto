@@ -1,9 +1,13 @@
 <header class="small-header">
   <h1>{{#link-to 'index'}}Pluto{{/link-to}}</h1>
   <div class="header-actions">
+    {{#link-to 'logs' profileURL classNames="list"}}
+      {{svg 'list'}}
+      <span>Entry list</span>
+    {{/link-to}}
     {{#link-to 'profile' profileURL}}
-    {{svg 'bar-chart'}}
-    <span>Report</span>
+      {{svg 'bar-chart'}}
+      <span>Report</span>
     {{/link-to}}
     <button {{action 'signOut'}} class="signout">
       {{svg 'account-logout'}}

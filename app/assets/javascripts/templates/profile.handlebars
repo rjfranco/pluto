@@ -2,9 +2,13 @@
   <h1>{{#link-to 'index'}}Pluto{{/link-to}}</h1>
   {{#if userLoggedIn}}
     <div class="header-actions">
+      {{#link-to 'logs' profileURL classNames="list"}}
+        {{svg 'list'}}
+        <span>Entry list</span>
+      {{/link-to}}
       {{#link-to 'index' classNames="document"}}
         {{svg 'document'}}
-        <span>Share</span>
+        <span>Entry form</span>
       {{/link-to}}
       <button {{action 'signOut'}} class="signout">
         {{svg 'account-logout'}}

@@ -25,11 +25,6 @@ Pluto.IndexController = Em.Controller.extend Pluto.UserMethods,
 
   todayValue: moment().format('YYYY-MM-DD')
 
-  profileURL: Em.computed ->
-    user = @get('controllers.user.model')
-    user?.get('profile_url')
-  .property('controllers.user.model.profile_url')
-
   submitEntryRequest: (form_data) ->
     $.ajax
       url: '/logs'
