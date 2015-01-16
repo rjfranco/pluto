@@ -1,4 +1,4 @@
-Pluto.IndexController = Em.Controller.extend
+Pluto.IndexController = Em.Controller.extend Pluto.UserMethods,
   needs: ['user']
 
   actions:
@@ -14,13 +14,6 @@ Pluto.IndexController = Em.Controller.extend
         setTimeout =>
           @get('datepicker').open()
         , 0
-
-    signOut: ->
-      @get('controllers.user').signOut()
-
-  userLoggedIn: Em.computed ->
-    !!@get('controllers.user.model')
-  .property('controllers.user.model')
 
   dayBefore: moment().subtract(2, 'days').format('MMM Do')
 

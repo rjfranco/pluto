@@ -1,4 +1,4 @@
-Pluto.ProfileController = Em.Controller.extend Pluto.TimeManipulation,
+Pluto.ProfileController = Em.Controller.extend Pluto.TimeManipulation, Pluto.UserMethods,
   needs: ['user', 'logs']
 
   actions:
@@ -7,9 +7,6 @@ Pluto.ProfileController = Em.Controller.extend Pluto.TimeManipulation,
         setTimeout =>
           @get(picker).open()
         , 0
-
-    signOut: ->
-      @get('controllers.user').signOut()
 
   formattedStartDate: Em.computed ->
     moment(@get('start_date')).format 'MMM Do'
@@ -21,10 +18,6 @@ Pluto.ProfileController = Em.Controller.extend Pluto.TimeManipulation,
     else
       moment(@get('end_date')).format 'MMM Do'
   .property 'end_date'
-
-  userLoggedIn: Em.computed ->
-    !!@get('controllers.user.model')
-  .property('controllers.user.model')
 
   totalHours: Em.computed ->
     @formattedTime @get('controllers.logs.totalTime')

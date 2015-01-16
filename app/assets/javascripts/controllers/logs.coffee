@@ -1,4 +1,6 @@
-Pluto.LogsController = Em.ArrayController.extend
+Pluto.LogsController = Em.ArrayController.extend Pluto.UserMethods,
+  needs: ['user']
+  
   getLogsFor: (options) ->
     $.ajax
       url: '/logs'
