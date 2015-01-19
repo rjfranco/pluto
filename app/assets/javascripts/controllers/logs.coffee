@@ -1,6 +1,13 @@
 Pluto.LogsController = Em.ArrayController.extend Pluto.UserMethods,
   needs: ['user']
-  
+
+  actions:
+    triggerCalendar: (picker) ->
+      unless @get(picker).get('open')
+        setTimeout =>
+          @get(picker).open()
+        , 0
+
   getLogsFor: (options) ->
     $.ajax
       url: '/logs'
@@ -37,6 +44,17 @@ Pluto.LogsController = Em.ArrayController.extend Pluto.UserMethods,
   onsiteTime: Em.computed ->
     @get('totalTime') - @get('offsiteTime')
   .property('totalTime', 'offsiteTime')
+
+  formattedStartDate: Em.computed ->
+    moment(@get('start_date')).format 'MMM Do'
+  .property 'start_date'
+
+  formattedEndDate: Em.computed ->
+    if @get('end_date') is moment().format('YYYY-MM-DD')
+      'Today'
+    else
+      moment(@get('end_date')).format 'MMM Do'
+  .property 'end_date'
 
   onsiteVsOffsiteReport: ->
     offsite_percentage = Math.round(@get('offsiteTime') / @get('totalTime') * 100)

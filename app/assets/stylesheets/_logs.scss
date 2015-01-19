@@ -3,14 +3,22 @@
   background: rgba(255,255,255,.4);
   overflow: hidden;
   margin: 2rem auto;
+
   header {
     h2 {
       margin: 1rem;
     }
   }
-  .table-wrapper {
-    margin: 1rem;
+
+  .date-selector {
+    @extend %date-selector;
+    margin: 0 1rem;
   }
+
+  .table-wrapper {
+    margin: 0 1rem 1rem;
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;

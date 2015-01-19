@@ -22,6 +22,21 @@
   <header>
     <h2>Time Log Entries</h2>
   </header>
+
+  <div class="date-selector">
+    <input type="hidden" id="start-datepicker-value" {{bind-attr value="start_date"}} {{bind-attr data-value="start_date"}} />
+    <button class="start button" {{action 'triggerCalendar' 'start-datepicker'}}>
+      {{svg 'calendar'}}
+      {{formattedStartDate}}
+    </button>
+    to
+    <input type="hidden" id="end-datepicker-value" {{bind-attr value="end_date"}} {{bind-attr data-value="end_date"}} />
+    <button class="end button" {{action 'triggerCalendar' 'end-datepicker'}}>
+      {{svg 'calendar'}}
+      {{formattedEndDate}}
+    </button>
+  </div>
+
   {{#if hasLogs}}
     <div class="table-wrapper">
       <table>

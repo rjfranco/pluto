@@ -47,34 +47,7 @@
     }
   }
   .date-selector {
-    display: inline-block;
-    background: rgba(255,255,255,.4);
-    .button {
-      @extend %button;
-      border-bottom: 0;
-      background: 0;
-      color: #fff;
-      outline: none;
-      padding: .5rem;
-      svg {
-        top: .1rem;
-        use {
-          fill: #fff;
-        }
-      }
-      &.start {
-        padding-left: .6rem;
-      }
-      &.end {
-        padding-right: .6rem;
-      }
-      &:hover {
-        background: rgba(255,255,255,.2);
-      }
-    }
-    .picker__input {
-      display: none;
-    }
+    @extend %date-selector;
   }
 }
 

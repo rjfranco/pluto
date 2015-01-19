@@ -1,27 +1,6 @@
 Pluto.ProfileView = Em.View.extend
   didInsertElement: ->
-    @setupMainChart()
     @setupDatePickers()
-
-  setupMainChart: ->
-    @setMainChartCanvasSize()
-    ctx = $("#standard-report")[0].getContext '2d'
-    data = @controller.get('controllers.logs').onsiteVsOffsiteReport()
-    @set 'main_chart', new Chart(ctx).Pie data,
-      segmentShowStroke: false
-      tooltipTemplate: '<%= value %>%'
-      onAnimationComplete: ->
-        @showTooltip @segments, true
-      tooltipEvents: []
-      showTooltips: true
-      responsive: true
-
-  setMainChartCanvasSize: ->
-    new_height = $('.pie-chart').innerHeight()
-    new_width = $('.pie-chart').innerWidth()
-    $("#standard-report").attr
-      width: new_width
-      height: new_height
 
   setupDatePickers: ->
     @setupDatePicker 'start-datepicker', 'start_date'
@@ -48,15 +27,8 @@ Pluto.ProfileView = Em.View.extend
 
   updateLogs: ->
     controller = @get('controller')
-    logs_controller = controller.get('controllers.logs')
 
-    logs_controller.getLogsFor
+    controller.getLogsFor
       profile_url: controller.get('model.profile_url')
       start_date: controller.get('start_date')
       end_date: controller.get('end_date')
-    .then =>
-      chart = @get('main_chart')
-      data = logs_controller.onsiteVsOffsiteReport()
-
-      chart.data = data
-      chart.update()
