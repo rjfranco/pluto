@@ -22,6 +22,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use haml.
 gem 'haml-rails'
 
+# Get some xlsx support
+gem 'axlsx_rails'
+
 # Ember.
 gem 'ember-rails'
 gem 'ember-source', '~> 1.9.1'

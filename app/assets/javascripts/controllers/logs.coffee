@@ -8,6 +8,10 @@ Pluto.LogsController = Em.ArrayController.extend Pluto.UserMethods,
           @get(picker).open()
         , 0
 
+    exportExcelFile: ->
+      @createDownloadIframe() unless @downloadIframeExists()
+      @downloadExcelFile()
+
   getLogsFor: (options) ->
     $.ajax
       url: '/logs'
@@ -78,3 +82,18 @@ Pluto.LogsController = Em.ArrayController.extend Pluto.UserMethods,
   hasLogs: Em.computed ->
     @get('model').length
   .property('@each')
+
+  downloadExcelFile: ->
+    $('.download-iframe').attr 'src', 'about:blank'
+    setTimeout =>
+      download_url = "/logs/export?profile_url=#{@get('profile_url')}&start_date=#{@get('start_date')}&end_date=#{@get('end_date')}"
+      $('.download-iframe').attr 'src', download_url
+    , 100
+
+  createDownloadIframe: ->
+    $('body').append """
+      <iframe class="download-iframe" style="display: none"></iframe>
+    """
+
+  downloadIframeExists: ->
+    $('.download-iframe').length

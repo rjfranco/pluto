@@ -1,0 +1,14 @@
+wb = xlsx_package.workbook
+wb.styles do |style|
+  head = style.add_style bg_color: '22', fg_color: 'FF'
+
+  wb.add_worksheet(name: 'Logs') do |sheet|
+    sheet.add_row ['Date', 'On-site Hours', 'Off-site Hours']
+    @logs.each do |log|
+      sheet.add_row [log.date, log.onsite_time / 60, log.offsite_time / 60]
+    end
+
+    sheet.row_style 0, head
+  end
+
+end

@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     get 'users/current' => 'registrations#current'
   end
 
-  resources :logs
+  resources :logs do
+    get 'export', on: :collection
+  end
 
   # Match everything else to the webapp
   get '*other' => 'application#index'

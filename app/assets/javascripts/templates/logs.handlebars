@@ -23,6 +23,11 @@
     <h2>Time Log Entries</h2>
   </header>
 
+  <button class="export-xls" {{action 'exportExcelFile'}}>
+    {{svg 'spreadsheet'}}
+    Export Excel File
+  </button>
+
   <div class="date-selector">
     <input type="hidden" id="start-datepicker-value" {{bind-attr value="start_date"}} {{bind-attr data-value="start_date"}} />
     <button class="start button" {{action 'triggerCalendar' 'start-datepicker'}}>

@@ -10,6 +10,27 @@
     }
   }
 
+  .export-xls {
+    float: right;
+    margin: 0 1rem;
+    background: rgba(255,255,255,.4);
+    border: 0;
+    padding: .5rem;
+    outline: none;
+    svg {
+      width: 1rem;
+      top: .2rem;
+      position: relative;
+      margin-right: .16rem;
+      use {
+        fill: #fff;
+      }
+    }
+    &:hover {
+      background: rgba(255,255,255,.5);
+    }
+  }
+
   .date-selector {
     @extend %date-selector;
     margin: 0 1rem;
