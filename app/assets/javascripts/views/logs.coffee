@@ -1,4 +1,4 @@
-Pluto.ProfileView = Em.View.extend
+Pluto.LogsView = Em.View.extend
   didInsertElement: ->
     @setupDatePickers()
 
@@ -29,6 +29,6 @@ Pluto.ProfileView = Em.View.extend
     controller = @get('controller')
 
     controller.getLogsFor
-      profile_url: controller.get('model.profile_url')
+      profile_url: controller.get('profile_url')
       start_date: controller.get('start_date')
       end_date: controller.get('end_date')
