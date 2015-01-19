@@ -7,7 +7,7 @@ class LogsController < ApplicationController
 
   def index
     @logs = get_logs_with_params
-    respond_with(@logs)
+    respond_with(@logs.sort_by)
   end
 
   def export
@@ -60,7 +60,7 @@ class LogsController < ApplicationController
       start_date = Date.parse params[:start_date]
       end_date = Date.parse params[:end_date]
       date_range = (start_date..end_date)
-      Log.where(user: user, date: date_range)
+      Log.where(user: user, date: date_range).order(date: :desc)
     end
 
     def merge_logs_by_date(logs)
