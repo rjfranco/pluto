@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -57,12 +56,16 @@ end
 gem 'rails-assets-jquery'
 
 # Additional Static Assets
-gem 'rails-assets-jquery-validate'
-gem 'rails-assets-normalize-css'
-gem 'rails-assets-pickadate', '~> 3.5.4'
-gem 'rails-assets-moment'
-gem 'rails-assets-jquery.transit'
-gem 'rails-assets-Chart.js'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery-validate'
+  gem 'rails-assets-normalize-css'
+  gem 'rails-assets-pickadate', '~> 3.5.4'
+  gem 'rails-assets-moment'
+  gem 'rails-assets-jquery.transit'
+  gem 'rails-assets-Chart.js', '~> 1.0.1'
+  # This should be uncommented if the nice owner ever pulls my request.
+  # gem 'rails-assets-Chart.StackedBar.js', '~> 1.0.1'
+end
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'

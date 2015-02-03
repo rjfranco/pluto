@@ -6,6 +6,7 @@
 #= require pickadate
 #= require jquery.transit
 #= require Chart.js
+#= require ./libraries/Chart.StackedBar
 #= require handlebars
 #= require ember
 #= require_self

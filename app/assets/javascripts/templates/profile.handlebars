@@ -48,5 +48,25 @@
     </div>
   </section>
 
-  {{#link-to 'logs' model.profile_url classNames="entries-link"}}See All Entries{{/link-to}}
+  <div class="right-hand">
+    <section class="last-week">
+      <header>
+        <h3>Last Week</h3>
+      </header>
+      <div class="stacked-bar-chart">
+        <canvas class="last-week-report"></canvas>
+      </div>
+      {{#if weekly-hours-visible}}
+        {{view 'weekly-hours'}}
+      {{/if}}
+      <button {{action 'toggleWeeklyHours'}} class="show-hours-button">
+        {{#if weekly-hours-visible}}
+          Hide Hours for Last Week
+        {{else}}
+          Show Hours for Last Week
+        {{/if}}
+      </button>
+    </section>
+    {{#link-to 'logs' model.profile_url classNames="entries-link"}}See All Entries{{/link-to}}
+  </div>
 </content>

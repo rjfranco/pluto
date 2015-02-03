@@ -1,6 +1,7 @@
 Pluto.ProfileView = Em.View.extend
   didInsertElement: ->
     @setupMainChart()
+    @setupWeeklyChart()
     @setupDatePickers()
 
   setupMainChart: ->
@@ -10,16 +11,34 @@ Pluto.ProfileView = Em.View.extend
     @set 'main_chart', new Chart(ctx).Pie data,
       segmentShowStroke: false
       tooltipTemplate: '<%= value %>%'
-      onAnimationComplete: ->
-        @showTooltip @segments, true
-      tooltipEvents: []
       showTooltips: true
       responsive: true
+
+  setupWeeklyChart: ->
+    @setupWeeklyChartCanvasSize()
+    ctx = $('.last-week-report')[0].getContext '2d'
+    data = @controller.get('last_week_stacked_bar_data')
+    options =
+      responsive: true
+      barShowStroke: false
+      scaleLineColor: 'rgba(255,255,255,.4)'
+      scaleFontColor: '#fff'
+    @set 'weekly_chart', new Chart(ctx).StackedBar data, options
 
   setMainChartCanvasSize: ->
     new_height = $('.pie-chart').innerHeight()
     new_width = $('.pie-chart').innerWidth()
     $("#standard-report").attr
+      width: new_width
+      height: new_height
+
+  setupWeeklyChartCanvasSize: ->
+    bar_chart_container = $('.stacked-bar-chart')
+
+    new_width = bar_chart_container.innerWidth()
+    new_height = bar_chart_container.innerHeight()
+
+    bar_chart_container.find('.last-week-report').attr
       width: new_width
       height: new_height
 

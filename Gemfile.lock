@@ -186,7 +186,7 @@ GEM
       rails-assets-jquery (>= 1.6.4)
     rails-assets-jquery.transit (0.9.12)
       rails-assets-jquery
-    rails-assets-moment (2.8.4)
+    rails-assets-moment (2.9.0)
     rails-assets-normalize-css (3.0.2)
     rails-assets-pickadate (3.5.4)
       rails-assets-jquery (>= 1.7)
@@ -265,13 +265,13 @@ DEPENDENCIES
   pry-remote
   puma-rails
   rails (= 4.1.8)
-  rails-assets-Chart.js
+  rails-assets-Chart.js (~> 1.0.1)!
   rails-assets-jquery
-  rails-assets-jquery-validate
-  rails-assets-jquery.transit
-  rails-assets-moment
-  rails-assets-normalize-css
-  rails-assets-pickadate (~> 3.5.4)
+  rails-assets-jquery-validate!
+  rails-assets-jquery.transit!
+  rails-assets-moment!
+  rails-assets-normalize-css!
+  rails-assets-pickadate (~> 3.5.4)!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

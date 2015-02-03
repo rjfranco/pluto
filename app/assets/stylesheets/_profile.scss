@@ -1,3 +1,8 @@
+.profile {
+  .right-hand {
+    float: left;
+  }
+}
 
 .percentage {
   background: rgba(255,255,255,.4);
@@ -74,5 +79,52 @@
   &:hover {
     background: rgba(255,255,255,.6);
     color: #f1f1f1;
+  }
+}
+
+.last-week {
+  background-color: rgba(255,255,255,.4);
+  margin: 2rem 1rem 1rem;
+  header {
+    overflow: hidden;
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin: 1rem;
+    }
+  }
+
+  .show-hours-button {
+    color: #fff;
+    background: none;
+    border: 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 1em 0;
+    outline: none;
+    &:hover {
+      background: rgba(255,255,255,.4);
+    }
+  }
+
+  .weekly-hours-table {
+    display: none;
+    table {
+      width: 100%;
+      tr {
+        &:nth-child(odd) {
+          th, td {
+            background: rgba(255,255,255,.2);
+          }
+        }
+        th, td {
+          padding: .25rem 1rem;
+          &:first-of-type {
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 }

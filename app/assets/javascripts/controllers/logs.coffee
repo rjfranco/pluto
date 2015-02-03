@@ -30,6 +30,19 @@ Pluto.LogsController = Em.ArrayController.extend Pluto.UserMethods,
       else
         @set 'model', logs
 
+  getLastWeekLogsFor: (options) ->
+    last_week_start = moment().weekday(-7).format('YYYY-MM-DD')
+    last_week_end = moment().weekday(-1).format('YYYY-MM-DD')
+    $.ajax
+      url: '/logs'
+      type: 'get'
+      dataType: 'json'
+      data:
+        authenticity_token: $('meta[name="csrf-token"]').attr('content')
+        profile_url: options.profile_url
+        start_date: last_week_start
+        end_date: last_week_end
+
   totalTime: Em.computed ->
     @reduce (previousTotal, log) ->
       previousTotal + log.get('time')
