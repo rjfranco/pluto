@@ -7,7 +7,7 @@ Pluto.EntryFormView = Em.View.extend
     @setupDatePicker()
 
   setupFormValidation: ->
-    $('.entry-form').validate
+    @set 'controller.validator', $('.entry-form').validate
       rules:
         unformatted_time: 'required'
       messages:

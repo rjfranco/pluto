@@ -65,6 +65,7 @@ Pluto.IndexController = Em.Controller.extend Pluto.UserMethods,
 
   clearForm: ->
     $('.entry-form .time input[type=text]').val('')
+    @get('validator').resetForm()
 
   getMinutes: (time) ->
     (@parseHours(time) * 60) + @parseMinutes(time)
