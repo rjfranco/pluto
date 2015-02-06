@@ -1,3 +1,7 @@
+.entry-form-container {
+  margin: auto;
+}
+
 .entry-form {
   background: rgba(255,255,255,.4);
   max-width: 25rem;
@@ -44,6 +48,7 @@
       }
     }
   }
+
   label[for=selected-date] {
     svg {
       width: 1rem;
@@ -58,6 +63,11 @@
         use {
           fill: #555;
         }
+      }
+    }
+    span {
+      @media #{$phone} {
+        display: none;
       }
     }
   }
@@ -119,6 +129,10 @@
     font-size: 1.25rem;
     margin-top: 2rem;
     outline: none;
+  }
+
+  @media #{$phone} {
+    background: none;
   }
 }
 
