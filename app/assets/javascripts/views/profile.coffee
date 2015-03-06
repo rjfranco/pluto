@@ -7,7 +7,7 @@ Pluto.ProfileView = Em.View.extend
   setupMainChart: ->
     @setMainChartCanvasSize()
     ctx = $("#standard-report")[0].getContext '2d'
-    data = @controller.get('controllers.logs').onsiteVsOffsiteReport()
+    data = @get('controller.controllers.logs').onsiteVsOffsiteReport()
     @set 'main_chart', new Chart(ctx).Pie data,
       segmentShowStroke: false
       tooltipTemplate: '<%= value %>%'
@@ -66,16 +66,17 @@ Pluto.ProfileView = Em.View.extend
     moment(controller.get('start_date')).isBefore moment(controller.get('end_date'))
 
   updateLogs: ->
-    controller = @get('controller')
-    logs_controller = controller.get('controllers.logs')
+    logs_controller = @get('controller.controllers.logs')
 
     logs_controller.getLogsFor
-      profile_url: controller.get('model.profile_url')
-      start_date: controller.get('start_date')
-      end_date: controller.get('end_date')
+      profile_url: @get('controller.model.profile_url')
+      start_date: @get('controller.start_date')
+      end_date: @get('controller.end_date')
     .then =>
       chart = @get('main_chart')
       data = logs_controller.onsiteVsOffsiteReport()
 
-      chart.data = data
+      chart.segments[0].value = data[0].value
+      chart.segments[1].value = data[1].value
+
       chart.update()
