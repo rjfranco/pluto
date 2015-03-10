@@ -59,10 +59,11 @@ gem 'rails-assets-jquery'
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery-validate'
   gem 'rails-assets-normalize-css'
-  gem 'rails-assets-pickadate', '~> 3.5.4'
+  # 3.5.5 package is broken, fix is in place, just waiting for it github pull
+  gem 'rails-assets-pickadate', '3.5.4'
   gem 'rails-assets-moment'
   gem 'rails-assets-jquery.transit'
-  gem 'rails-assets-Chart.js', '~> 1.0.1'
+  gem 'rails-assets-Chart.js', '~> 1.0.2'
   # This should be uncommented if the nice owner ever pulls my request.
   # gem 'rails-assets-Chart.StackedBar.js', '~> 1.0.1'
 end
